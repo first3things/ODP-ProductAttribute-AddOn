@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>Johnny Mullaney</Authors>
+    <Company>FTT (First 3 Things)</Company>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPiServer.CMS.Core" Version="12.12.1" />
+    <PackageReference Include="EPiServer.Commerce.Core" Version="14.9.0" />
+  </ItemGroup>
+
+</Project>
