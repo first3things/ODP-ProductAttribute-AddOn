@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using EPiServer.DataAbstraction;
 
-namespace ODPProductAttributeConnector.Service;
+namespace First3Things.ODPProductAttributeConnector.Service;
 
 public interface IProductContentTypeRepository
 {

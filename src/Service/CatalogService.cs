@@ -6,7 +6,7 @@ using EPiServer.Globalization;
 using EPiServer.ServiceLocation;
 using Mediachase.Commerce.Catalog;
 
-namespace ODPProductAttributeConnector.Service;
+namespace First3Things.ODPProductAttributeConnector.Service;
 
 public class CatalogService : ICatalogService
 {

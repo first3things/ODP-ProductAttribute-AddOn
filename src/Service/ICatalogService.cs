@@ -1,6 +1,6 @@
 ﻿using EPiServer.Core;
 
-namespace ODPProductAttributeConnector.Service
+namespace First3Things.ODPProductAttributeConnector.Service
 {
     public interface ICatalogService
     {

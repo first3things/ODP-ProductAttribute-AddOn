@@ -1,11 +1,11 @@
 ﻿using System.Reflection;
 using EPiServer.Commerce.Catalog.ContentTypes;
 using EPiServer.ServiceLocation;
+using First3Things.ODPProductAttributeConnector.DataPlatform;
+using First3Things.ODPProductAttributeConnector.Models;
 using Mediachase.Commerce.Catalog;
-using ODPProductAttributeConnector.DataPlatform;
-using ODPProductAttributeConnector.Models;
 
-namespace ODPProductAttributeConnector.Service;
+namespace First3Things.ODPProductAttributeConnector.Service;
 
 public class OdpCatalogSyncService : IOdpCatalogSyncService
 {

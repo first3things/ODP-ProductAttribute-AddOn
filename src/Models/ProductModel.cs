@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace ODPProductAttributeConnector.Models
+namespace First3Things.ODPProductAttributeConnector.Models
 {
     public class ProductModel
     {

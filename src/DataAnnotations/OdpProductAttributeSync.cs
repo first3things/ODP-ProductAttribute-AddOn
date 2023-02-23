@@ -1,4 +1,4 @@
-﻿namespace ODPProductAttributeConnector.DataAnnotations
+﻿namespace First3Things.ODPProductAttributeConnector.DataAnnotations
 {
 
     [System.AttributeUsage(System.AttributeTargets.Property)]

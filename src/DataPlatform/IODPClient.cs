@@ -1,6 +1,6 @@
-﻿using ODPProductAttributeConnector.Models;
+﻿using First3Things.ODPProductAttributeConnector.Models;
 
-namespace ODPProductAttributeConnector.DataPlatform;
+namespace First3Things.ODPProductAttributeConnector.DataPlatform;
 
 public interface IODPClient
 {

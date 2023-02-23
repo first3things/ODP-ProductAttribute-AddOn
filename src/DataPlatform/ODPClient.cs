@@ -1,10 +1,10 @@
 ﻿using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
+using First3Things.ODPProductAttributeConnector.Models;
 using Microsoft.Extensions.Configuration;
-using ODPProductAttributeConnector.Models;
 
-namespace ODPProductAttributeConnector.DataPlatform;
+namespace First3Things.ODPProductAttributeConnector.DataPlatform;
 
 public class ODPClient : IODPClient
 {

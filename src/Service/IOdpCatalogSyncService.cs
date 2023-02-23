@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using EPiServer.Commerce.Catalog.ContentTypes;
 
-namespace ODPProductAttributeConnector.Service;
+namespace First3Things.ODPProductAttributeConnector.Service;
 
 public interface IOdpCatalogSyncService
 {
