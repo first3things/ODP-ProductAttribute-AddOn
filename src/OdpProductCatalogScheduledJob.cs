@@ -2,10 +2,10 @@
 using EPiServer.DataAbstraction;
 using EPiServer.PlugIn;
 using EPiServer.Scheduler;
+using First3Things.ODPProductAttributeConnector.Service;
 using Microsoft.Extensions.Logging;
-using ODPProductAttributeConnector.Service;
 
-namespace ODPProductAttributeConnector;
+namespace First3Things.ODPProductAttributeConnector;
 
 [ScheduledPlugIn(   
     DisplayName = "ODP Product Attribute Connector", 

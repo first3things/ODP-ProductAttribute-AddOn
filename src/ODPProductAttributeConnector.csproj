@@ -13,6 +13,8 @@
     <Product>First3Things.$(AssemblyName)</Product>
     <AssemblyName>First3Things.$(MSBuildProjectName)</AssemblyName>
     <RootNamespace>First3Things.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+    <PackageProjectUrl>https://github.com/first3things/ODP-ProductAttribute-AddOn</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/first3things/ODP-ProductAttribute-AddOn</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
