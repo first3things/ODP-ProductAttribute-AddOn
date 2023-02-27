@@ -29,7 +29,7 @@ services.AddOdpProductAttributeConnector(_configuration);
 Add the [OdpProductSync] attribute to Product and Variant Content Type properties that you want to sync to ODP
 
 ```
-[OdpProductSync]
+[OdpProductSync("brand")]
 [Searchable]
 [CultureSpecific]
 [Tokenize]
@@ -38,6 +38,11 @@ Add the [OdpProductSync] attribute to Product and Variant Content Type propertie
 [Display(Name = "Brand", GroupName = SystemTabNames.Content, Order = 15)]
 public virtual string Brand { get; set; }
 ```
+
+Set the value in the attribute constructor to the field name of the product attribute in ODP
+
+![image](https://user-images.githubusercontent.com/19771039/221570297-62d4a39e-ab1a-4f28-94ae-5dbb546e7e1b.png)
+
 
 ### Scheduled Job
 
