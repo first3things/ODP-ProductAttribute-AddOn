@@ -1,15 +1,52 @@
-# ODP Product Attribute Sync Job for Configured Commerce
+# Description
 
-This module adds a "Odp Product Attribute Connector" Scheduled Job in the Optimziely Configured Commerce Administration area
+Import Product Attribute data from Optimziely Configured Commerce to the ODP (Optimizely Data Platform) Product Catalog. 
 
-The job will sync tagged Product Catalog Attributes to ODP.
-
-It enables  marketers to create Customer Segments based on the attribute values of products custommers are interacting with 
-
-## Installation
+# Installation
 
 Install the package directly from the Optimizley Nuget repository.
 
 ```
 dotnet add package First3Things.ODPProductAttributeConnector
 ```
+
+## Configuration
+
+### Startup
+
+Startup.cs
+
+```
+using First3Things.ODPProductAttributeConnector.DependencyInjection;
+```
+...
+```
+services.AddOdpProductAttributeConnector(_configuration);
+```
+
+### Product Attributes
+
+Add the [OdpProductSync] attribute to Product and Variant Content Type properties that you want to sync to ODP
+
+```
+[OdpProductSync]
+[Searchable]
+[CultureSpecific]
+[Tokenize]
+[IncludeInDefaultSearch]
+[BackingType(typeof(PropertyString))]
+[Display(Name = "Brand", GroupName = SystemTabNames.Content, Order = 15)]
+public virtual string Brand { get; set; }
+```
+
+### Scheduled Job
+
+Run the 'ODP Product Attribute Connector' scheduled job to sync attribute values to the ODP Product Catalog
+
+![image](https://user-images.githubusercontent.com/19771039/221544669-fa35e11e-910b-450f-8621-8e3b64d60238.png)
+
+# Version History
+
+ |Version| Details|
+ |:---|:---------------|
+ |1.0|Initial Release|
