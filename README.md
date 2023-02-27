@@ -1,8 +1,8 @@
 # Description
 
-Import Product Attribute data from Optimziely Customized Commerce to your Optimizely Data Platform (ODP) Product Catalog. 
+Import Product Attribute data from Optimizely Customized Commerce to your Optimizely Data Platform (ODP) Product Catalog. 
 
-**For .NET 6, Optimizely CMS 12 and Optimizely Customized Commerce 14**
+**For .NET 5/.NET 6, Optimizely CMS 12 and Optimizely Customized Commerce 14**
 
 # Installation
 
@@ -14,9 +14,7 @@ dotnet add package First3Things.ODPProductAttributeConnector
 
 ## Configuration
 
-### Startup
-
-Startup.cs
+### Startup.cs
 
 ```
 using First3Things.ODPProductAttributeConnector.DependencyInjection;
