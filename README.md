@@ -2,7 +2,7 @@
 
 Import Product Attribute data from Optimziely Customized Commerce to your Optimizely Data Platform (ODP) Product Catalog. 
 
-**For .NET 6, Optimizely CMS 12 and Optimizely Customized Commerce 14**
+**For .NET 5/.NET 6, Optimizely CMS 12 and Optimizely Customized Commerce 14**
 
 # Installation
 
