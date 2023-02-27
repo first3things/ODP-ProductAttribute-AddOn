@@ -16,6 +16,7 @@
     <RepositoryUrl>https://github.com/first3things/ODP-ProductAttribute-AddOn</RepositoryUrl>
 	  <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>Initial Release</PackageReleaseNotes>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>

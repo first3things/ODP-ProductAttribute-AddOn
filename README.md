@@ -55,3 +55,4 @@ Run the 'ODP Product Attribute Connector' scheduled job to sync attribute values
  |Version| Details|
  |:---|:---------------|
  |1.0|Initial Release|
+ |1.1|Added "FieldName" property to OdpProductSyncAttribute. Set this to ODP Field Name for each property that is synced|
