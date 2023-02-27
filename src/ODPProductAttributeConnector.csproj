@@ -6,7 +6,7 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Authors>Johnny Mullaney</Authors>
     <Company>First Three Things Ltd</Company>
-    <Description>ODP (Optimizely Data Platform) Connector for Optimizely Configured Commerce to sync Product Attribute data from the product catalog</Description>
+    <Description>Optimizely Data Platform (ODP) Connector for Optimizely Customized Commerce to sync Product Attribute data to the ODP product catalog</Description>
     <Copyright>FTT (First 3 Things)</Copyright>
     <PackageId>First3Things.$(AssemblyName)</PackageId>
     <Product>First3Things.$(AssemblyName)</Product>
