@@ -14,9 +14,7 @@ dotnet add package First3Things.ODPProductAttributeConnector
 
 ## Configuration
 
-### Startup
-
-Startup.cs
+### Startup.cs
 
 ```
 using First3Things.ODPProductAttributeConnector.DependencyInjection;
