@@ -2,6 +2,7 @@
 using System.Reflection;
 using EPiServer.Commerce.Catalog.ContentTypes;
 using EPiServer.ServiceLocation;
+using First3Things.ODPProductAttributeConnector.DataAnnotations;
 using First3Things.ODPProductAttributeConnector.DataPlatform;
 using First3Things.ODPProductAttributeConnector.Models;
 using Mediachase.Commerce.Catalog;
@@ -38,11 +39,22 @@ namespace First3Things.ODPProductAttributeConnector.Service
 
                 foreach (var propertyInfo in propertyInfos)
                 {
+                    string fieldName = string.Empty;
+                    foreach (var attribute in propertyInfo.GetCustomAttributes(true))
+                    {
+                        if (attribute is OdpProductSyncAttribute odpAttribute)
+                        {
+                            fieldName = odpAttribute.FieldName;
+                            break;
+                        }
+                    }
+
                     var value = propertyInfo.GetValue(entry);
 
-                    if (value != null)
-                        attributes.Add(propertyInfo.Name, value.ToString());
+                    if (!string.IsNullOrEmpty(fieldName) && value != null)
+                        attributes.Add(fieldName, value.ToString());
                 }
+
 
                 productModels.Add(new ProductModel()
                 {

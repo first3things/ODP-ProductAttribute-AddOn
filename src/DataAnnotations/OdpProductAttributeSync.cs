@@ -1,8 +1,16 @@
-﻿namespace First3Things.ODPProductAttributeConnector.DataAnnotations
+﻿using System;
+
+namespace First3Things.ODPProductAttributeConnector.DataAnnotations
 {
 
-    [System.AttributeUsage(System.AttributeTargets.Property)]
-    public class OdpProductSyncAttribute : System.Attribute
+    [AttributeUsage(AttributeTargets.Property)]
+    public class OdpProductSyncAttribute : Attribute
     {
+        public OdpProductSyncAttribute(string fieldName)
+        {
+            FieldName = fieldName;
+        }
+
+        public string FieldName { get; }
     }
 }
