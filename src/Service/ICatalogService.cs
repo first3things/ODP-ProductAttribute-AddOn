@@ -1,4 +1,5 @@
-﻿using EPiServer.Core;
+﻿using System.Collections.Generic;
+using EPiServer.Core;
 
 namespace First3Things.ODPProductAttributeConnector.Service
 {

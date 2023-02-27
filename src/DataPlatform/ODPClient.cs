@@ -1,36 +1,41 @@
-﻿using System.Net.Http.Headers;
+﻿using System.Collections.Generic;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
+using System.Threading.Tasks;
 using First3Things.ODPProductAttributeConnector.Models;
 using Microsoft.Extensions.Configuration;
 
-namespace First3Things.ODPProductAttributeConnector.DataPlatform;
-
-public class ODPClient : IODPClient
+namespace First3Things.ODPProductAttributeConnector.DataPlatform
 {
-    private readonly IConfiguration _configuration;
 
-    public ODPClient(IConfiguration configuration)
+    public class ODPClient : IODPClient
     {
-        _configuration = configuration;
-    }
+        private readonly IConfiguration _configuration;
 
-    public void SendProductAttributesToDataPlatform(List<ProductModel> products)
-    {
-        HttpClient client = new();
+        public ODPClient(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
 
-        client.DefaultRequestHeaders.Accept.Clear();
-        client.DefaultRequestHeaders.Add("x-api-key", _configuration.GetValue<string>("ODPConnector:apiKey"));
-        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        public void SendProductAttributesToDataPlatform(List<ProductModel> products)
+        {
+            HttpClient client = new();
 
-        var json = JsonSerializer.Serialize(products);
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Add("x-api-key", _configuration.GetValue<string>("ODPConnector:apiKey"));
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-        var data = new StringContent(json, Encoding.UTF8, "application/json");
+            var json = JsonSerializer.Serialize(products);
 
-        string apiUrl = $"https://{_configuration.GetValue<string>("ODPConnector:apiHost")}/v3/objects/products";
+            var data = new StringContent(json, Encoding.UTF8, "application/json");
 
-        var response = Task.Run(() => client.PostAsync(apiUrl, data));
+            string apiUrl = $"https://{_configuration.GetValue<string>("ODPConnector:apiHost")}/v3/objects/products";
 
-        var result = response.Result;
+            var response = Task.Run(() => client.PostAsync(apiUrl, data));
+
+            var result = response.Result;
+        }
     }
 }

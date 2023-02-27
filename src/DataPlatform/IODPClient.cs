@@ -1,8 +1,11 @@
-﻿using First3Things.ODPProductAttributeConnector.Models;
+﻿using System.Collections.Generic;
+using First3Things.ODPProductAttributeConnector.Models;
 
-namespace First3Things.ODPProductAttributeConnector.DataPlatform;
-
-public interface IODPClient
+namespace First3Things.ODPProductAttributeConnector.DataPlatform
 {
-    void SendProductAttributesToDataPlatform(List<ProductModel> products);
+
+    public interface IODPClient
+    {
+        void SendProductAttributesToDataPlatform(List<ProductModel> products);
+    }
 }
