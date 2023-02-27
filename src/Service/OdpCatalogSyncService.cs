@@ -26,17 +26,10 @@ public class OdpCatalogSyncService : IOdpCatalogSyncService
 
         var entries = _catalogService.GetEntriesRecursive<T>(catalogRoot.ContentLink);
 
-        var list = new List<T>();
-
-        foreach (var entry in entries)
-        {
-            list.Add(entry);
-        }
-
         List<ProductModel> productModels = new List<ProductModel>();
 
         // build JSON Model
-        foreach (var entry in list)
+        foreach (var entry in entries)
         {
             var attributes = new Dictionary<string, object>();
 
