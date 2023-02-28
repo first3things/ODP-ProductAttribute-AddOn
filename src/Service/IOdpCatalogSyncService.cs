@@ -7,6 +7,6 @@ namespace First3Things.ODPProductAttributeConnector.Service
 
     public interface IOdpCatalogSyncService
     {
-        void ProcessProductContentType<T>(IEnumerable<PropertyInfo> propertyInfos) where T : CatalogContentBase;
+        bool ProcessProductContentType<T>(IEnumerable<PropertyInfo> propertyInfos) where T : CatalogContentBase;
     }
 }

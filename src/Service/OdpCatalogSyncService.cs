@@ -22,13 +22,15 @@ namespace First3Things.ODPProductAttributeConnector.Service
             _client = ServiceLocator.Current.GetInstance<IODPClient>();
         }
 
-        public void ProcessProductContentType<T>(IEnumerable<PropertyInfo> propertyInfos) where T : CatalogContentBase
+        public bool ProcessProductContentType<T>(IEnumerable<PropertyInfo> propertyInfos) where T : CatalogContentBase
         {
             var catalogRoot = _catalogService.GetCatalogRoot();
 
             var entries = _catalogService.GetEntriesRecursive<T>(catalogRoot.ContentLink);
 
             List<ProductModel> productModels = new List<ProductModel>();
+
+            bool totalSuccess = true;
 
             // build JSON Model
             foreach (var entry in entries)
@@ -65,8 +67,22 @@ namespace First3Things.ODPProductAttributeConnector.Service
 
             if (productModels.Count > 0)
             {
-                _client.SendProductAttributesToDataPlatform(productModels);
+                for (int i = 1000; i < 20000; i++)
+                {
+                    productModels.Add(new ProductModel()
+                    {
+                        ProductId = "Test" + i.ToString(),
+                        Attributes = new Dictionary<string, object>()
+                        {
+                            {"brand", "test-brand-value" }
+                        }
+                    });
+                }
+
+                totalSuccess= _client.SendProductAttributesToDataPlatform(productModels);
             }
+
+            return totalSuccess;
         }
     }
 }
