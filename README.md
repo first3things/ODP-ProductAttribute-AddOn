@@ -50,7 +50,7 @@ Run the 'ODP Product Attribute Connector' scheduled job to sync attribute values
 
 ![image](https://user-images.githubusercontent.com/19771039/221544669-fa35e11e-910b-450f-8621-8e3b64d60238.png)
 
-# What to know
+# Notes
 
 ## Retrive Catalog Business Logic
 
@@ -62,13 +62,11 @@ If you need to overwrite this logic, inject a new implementation for ICatalogSer
 
 ## ODP Commerce Cloud Connecotor (App Directory)
 
-This package is responseible for updating the Attribute Values of Products and Variants only. 
+This package is responseible for updating the Attribute Values of Products and Variants only. It does not affect the Product / Variant relationships. 
 
-It does not affect the Product / Variant relationships. 
+It is recommended to use the Commerce Cloud connector in the ODP App Directory to maintain Product / Variant relationships as well as other data it maintains such as Product  Name, Image and Price.
 
-It is recommended to use the Commerce Cloud connector in the ODP App Directory to maintain Product / Variant relationships. The connecor also imports Name, Image and Price.
-
-Read more on the Commerce Cloud Connector: https://docs.developers.optimizely.com/digital-experience-platform/v1.5.0-optimizely-data-platform/docs/import-data-from-optimizely-commerce-cloud#commerce-cloud-and-odp-fields
+Read more on the ODP Commerce Cloud Connector: https://docs.developers.optimizely.com/digital-experience-platform/v1.5.0-optimizely-data-platform/docs/import-data-from-optimizely-commerce-cloud#commerce-cloud-and-odp-fields
 
 ## Useful Documentation
 
