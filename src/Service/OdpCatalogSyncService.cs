@@ -67,18 +67,6 @@ namespace First3Things.ODPProductAttributeConnector.Service
 
             if (productModels.Count > 0)
             {
-                for (int i = 1000; i < 20000; i++)
-                {
-                    productModels.Add(new ProductModel()
-                    {
-                        ProductId = "Test" + i.ToString(),
-                        Attributes = new Dictionary<string, object>()
-                        {
-                            {"brand", "test-brand-value" }
-                        }
-                    });
-                }
-
                 totalSuccess= _client.SendProductAttributesToDataPlatform(productModels);
             }
 
