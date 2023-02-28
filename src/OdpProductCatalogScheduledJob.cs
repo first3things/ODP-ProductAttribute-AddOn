@@ -23,7 +23,7 @@ namespace First3Things.ODPProductAttributeConnector
         private readonly ILogger<OdpProductCatalogScheduledJob> _logger;
 
         public OdpProductCatalogScheduledJob(IProductContentTypeRepository productContentTypeRepository, ILogger<OdpProductCatalogScheduledJob> logger)
-        {
+        {   
             _productContentTypeRepository = productContentTypeRepository;
             _logger = logger;
         }
@@ -32,6 +32,8 @@ namespace First3Things.ODPProductAttributeConnector
         {
             //Call OnStatusChanged to periodically notify progress of job for manually started jobs
             OnStatusChanged($"Starting execution of {this.GetType()}");
+
+            bool totalSuccess = true;
 
             try
             {
@@ -53,12 +55,14 @@ namespace First3Things.ODPProductAttributeConnector
                 // loop content types and invoke CatalogSyncService
                 foreach (var contentType in contentTypes)
                 {
+                    OnStatusChanged($"Processing Content Type: {contentType.Key.Name}");
+
                     Type[] productType = new Type[] { Type.GetType(contentType.Key.ModelTypeString) };
 
                     var mi = typeof(OdpCatalogSyncService).GetMethod("ProcessProductContentType");
                     var method = mi.MakeGenericMethod(productType);
 
-                    method.Invoke(new OdpCatalogSyncService(), new[] { contentType.Value });
+                    totalSuccess = (bool)(method.Invoke(new OdpCatalogSyncService(), new[] { contentType.Value }) ?? false);
                 }
             }
             catch (Exception e)
@@ -72,6 +76,10 @@ namespace First3Things.ODPProductAttributeConnector
             {
                 return "Stop of job was called";
             }
+
+
+            if (!totalSuccess)
+                return "The job has completed with some errors. Check log files for more details.";
 
             return "Products Attributes have been successfully synced to ODP";
         }

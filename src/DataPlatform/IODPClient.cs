@@ -6,6 +6,6 @@ namespace First3Things.ODPProductAttributeConnector.DataPlatform
 
     public interface IODPClient
     {
-        void SendProductAttributesToDataPlatform(List<ProductModel> products);
+        bool SendProductAttributesToDataPlatform(List<ProductModel> products);
     }
 }
