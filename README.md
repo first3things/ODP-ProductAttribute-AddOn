@@ -24,6 +24,14 @@ using First3Things.ODPProductAttributeConnector.DependencyInjection;
 services.AddOdpProductAttributeConnector(_configuration);
 ```
 
+Add your API credentials to the appSettings.json file
+```
+  "ODPConnector": {
+    "apiHost": "<-- host name e.g. api.zaius.com -->",
+    "apiKey": "<-- your public api key retrieved in the admin area -->"
+  }
+```
+
 ### Product Attributes
 
 Add the [OdpProductSync] attribute to Product and Variant Content Type properties that you want to sync to ODP
@@ -58,11 +66,15 @@ Multiple catalogs are not supported out of the box.
 
 The business logic executed by the Schedyled Job picks the first Catalog.
 
-If you need to overwrite this logic, inject a new implementation for ICatalogService.GetCatalogRoot()
+If you need to overwrite this logic, inject a new implementation for 
+
+```
+ICatalogService.GetCatalogRoot()
+```
 
 ## ODP Commerce Cloud Connecotor (App Directory)
 
-This package is responseible for updating the Attribute Values of Products and Variants only. It does not affect the Product / Variant relationships. 
+This package is responsible for updating the Attribute Values of Products and Variants only. It does not affect the Product / Variant relationships. 
 
 It is recommended to use the Commerce Cloud connector in the ODP App Directory to maintain Product / Variant relationships as well as other data it maintains such as Product  Name, Image and Price.
 
