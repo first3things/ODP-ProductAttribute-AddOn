@@ -8,6 +8,8 @@ Import Product Attribute data from Optimizely Customized Commerce to your Optimi
 
 Install the package directly from the Optimizley Nuget repository.
 
+https://nuget.optimizely.com/package/?id=First3Things.ODPProductAttributeConnector
+
 ```
 dotnet add package First3Things.ODPProductAttributeConnector
 ```
